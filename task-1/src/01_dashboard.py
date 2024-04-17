@@ -6,12 +6,15 @@ from dash import html
 import plotly.express as px
 
 def dashboard():
+    # Using latitude and longitude of Kansas City
     latitude = "39.09973000"
     longitude = "-94.57857000"
-    api_key = "0b6f74926bf66f0ff55d68e7d8aed37d"
-    url = "https://api.openweathermap.org/data/3.0/onecall?lat={}&lon={}&appid={}".format(latitude, longitude, api_key)
 
-    response = requests.get(url)
+    api_key = "0b6f74926bf66f0ff55d68e7d8aed37d"
+
+    weather_api_url = "https://api.openweathermap.org/data/3.0/onecall?lat={}&lon={}&appid={}".format(latitude, longitude, api_key)
+
+    response = requests.get(weather_api_url)
 
     # Save the response into a variable
     weather_data = response.json()
