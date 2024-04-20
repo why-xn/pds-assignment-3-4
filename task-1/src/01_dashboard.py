@@ -63,6 +63,7 @@ def dashboard():
         )
     ])
 
+    # the dashboard will be accessible through http://127.0.0.1:8050/ after running the server. the screenshot of the dashboard is provided in the result folder.
     app.run_server(debug=True)
 
 
